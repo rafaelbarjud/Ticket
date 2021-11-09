@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31808.319
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{31018BD8-8C06-431E-AB8A-3F33A45DB3A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{E42CA292-8C21-4CED-B399-99F3A94D6709}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{9C742917-62B6-413B-9450-337689C6E0AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{650F5472-9924-4A4F-8746-522488B4378B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticket.Domain", "src\Ticket.Domain\Ticket.Domain.csproj", "{227EB8E2-64BC-42C4-AE65-18C013A0AFEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{227EB8E2-64BC-42C4-AE65-18C013A0AFEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{227EB8E2-64BC-42C4-AE65-18C013A0AFEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{227EB8E2-64BC-42C4-AE65-18C013A0AFEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{227EB8E2-64BC-42C4-AE65-18C013A0AFEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{227EB8E2-64BC-42C4-AE65-18C013A0AFEA} = {31018BD8-8C06-431E-AB8A-3F33A45DB3A0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9F4AF04-2D97-4003-ABBD-3D83203177C2}
+	EndGlobalSection
+EndGlobal
