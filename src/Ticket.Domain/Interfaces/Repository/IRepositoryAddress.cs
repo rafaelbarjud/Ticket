@@ -2,7 +2,7 @@
 
 namespace Ticket.Domain.Interfaces.Repository
 {
-    public interface IRepositoryAdress : IRepositoryBase<Address>
+    public interface IRepositoryAddress : IRepositoryBase<Address>
     {
 
     }

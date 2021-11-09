@@ -6,9 +6,9 @@ namespace Ticket.Domain.Services
 {
     public class ServiceAddress : ServiceBase<Address>, IServiceAddress
     {
-        public readonly IRepositoryAdress _repositoryAddress;
+        public readonly IRepositoryAddress _repositoryAddress;
 
-        public ServiceAddress(IRepositoryAdress repositoryAdress)
+        public ServiceAddress(IRepositoryAddress repositoryAdress)
             : base(repositoryAdress)
         {
             _repositoryAddress = repositoryAdress;

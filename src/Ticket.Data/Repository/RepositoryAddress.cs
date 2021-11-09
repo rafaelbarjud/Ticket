@@ -6,7 +6,7 @@ using Ticket.Domain.Models;
 
 namespace Ticket.Data.Repository
 {
-    public  class RepositoryAddress : RepositoryBase<Address>, IRepositoryAdress
+    public  class RepositoryAddress : RepositoryBase<Address>, IRepositoryAddress
     {
         private readonly SqlContext _context;
 
