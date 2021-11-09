@@ -3,6 +3,7 @@
     public  class Address : BaseEntity
     {
         public string Cep { get; set; }
+        public string Category { get; set; }
         public string PublicPlace { get; set; }
         public string Complement { get; set; }
         public string District { get; set; }
