@@ -1,6 +1,8 @@
-﻿using System;
+﻿
+using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using Ticket.Domain.Interfaces.Repository;
 using Ticket.Domain.Models;
 
@@ -10,10 +12,16 @@ namespace Ticket.Data.Repository
     {
         private readonly SqlContext _context;
 
-        public RepositoryAddress(SqlContext Context)
-            : base(Context)
+        public RepositoryAddress(SqlContext context)
+            : base(context)
         {
-            _context = Context;
+            _context = context;
+        }
+
+        public List<Address> GetAddresByUserId(Guid userId)
+        {
+            return _context.Set<Address>().Where(x => x.User.Id.Equals(userId))
+                .ToList();
         }
     }
 }

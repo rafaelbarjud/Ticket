@@ -11,7 +11,7 @@ namespace Ticket.Domain.Models
     {
         public string Name { get; set; }
         public string Email { get; set; }
-        public DateTime? DateBirth { get; set; }
+        public DateTime? BirthDate { get; set; }
         public string Phone { get; set; }
 
         public ICollection<Address> Address { get; set; }
@@ -22,10 +22,10 @@ namespace Ticket.Domain.Models
             UserValidator validator = new UserValidator();
             ValidationResult result = validator.Validate(user);
 
-            StringBuilder sb = new StringBuilder();
-
             if (!result.IsValid)
             {
+                StringBuilder sb = new StringBuilder();
+
                 foreach (var item in result.Errors)
                 {
                     sb.Append($"{item.ErrorMessage} | ");

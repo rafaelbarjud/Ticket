@@ -37,7 +37,16 @@ namespace Ticket.Domain.Services
 
         public void Update(T entity)
         {
-            _repositoryBase.Update(entity);
+            try
+            {
+                _repositoryBase.Update(entity);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
     }
 }

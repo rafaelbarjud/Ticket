@@ -3,11 +3,11 @@ using Microsoft.Extensions.Logging;
 using Ticket.Application.Interfaces;
 using Ticket.Application.Request;
 using Newtonsoft.Json;
-
+using System;
 
 namespace Ticket.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -24,10 +24,50 @@ namespace Ticket.Api.Controllers
         [HttpPost]
         public ActionResult Post([FromBody] RequestUser user)
         {
-            _logger.LogInformation($"Iniciando a inclusão do usuário: {JsonConvert.SerializeObject(user)}");
+            _logger.LogInformation($"Started inclusion of user: {JsonConvert.SerializeObject(user)}");
 
-            _applicationService.Add(user);
-            return Ok();
+            return Ok(_applicationService.Add(user));
+             
+        }
+
+        [Route("{id}")]
+        [HttpGet]
+        public ActionResult GetById(Guid id)
+        {
+            _logger.LogInformation($"Get user of id: {id}");
+
+            return Ok(_applicationService.GetByIdWithAddress(id));
+
+        }
+
+        [Route("{name}")]
+        [HttpGet]
+        public ActionResult GetByName(string name)
+        {
+            _logger.LogInformation($"Get user of id: {name}");
+
+            return Ok(_applicationService.GetByName(name));
+
+        }
+
+        [Route("")]
+        [HttpPatch]
+        public ActionResult Update([FromBody] RequestUpdateUser user)
+        {
+            _logger.LogInformation($"Started update of user: {JsonConvert.SerializeObject(user)}");
+
+            return Ok(_applicationService.Update(user));
+
+        }
+
+        [Route("{id}")]
+        [HttpDelete]
+        public ActionResult Delete(Guid id)
+        {
+            _logger.LogInformation($"Started delete of user: {id}");
+            _applicationService.Remove(id);
+            return NoContent();
+
         }
     }
 }

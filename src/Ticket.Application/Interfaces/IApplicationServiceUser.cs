@@ -7,13 +7,15 @@ namespace Ticket.Application.Interfaces
 {
     public interface IApplicationServiceUser
     {
-        void Add(RequestUser user);
+        ResponseUser Add(RequestUser user);
 
         ResponseUser GetById(Guid id);
-        
+
+        ResponseUser GetByIdWithAddress(Guid id);
+
         List<ResponseUser> GetByName(string name);
 
-        void Update(RequestUser user);
+        ResponseUser Update(RequestUpdateUser user);
 
         void Remove(Guid id);
 

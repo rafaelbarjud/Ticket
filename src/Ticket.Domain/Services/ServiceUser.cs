@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Ticket.Domain.Interfaces.Repository;
 using Ticket.Domain.Interfaces.Services;
 using Ticket.Domain.Models;
@@ -13,6 +14,11 @@ namespace Ticket.Domain.Services
             : base(repositoryUser)
         {
             _repositoryUser = repositoryUser;
+        }
+
+        public User GetByIdWithAddress(Guid id)
+        {
+            return _repositoryUser.GetByIdWithAddress(id);
         }
 
         public List<User> GetByName(string name)

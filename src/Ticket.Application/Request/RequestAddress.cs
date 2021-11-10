@@ -2,7 +2,7 @@
 {
     public class RequestAddress
     {
-        public string Cep { get; set; }
+        public string ZipCode { get; set; }
         public string Category { get; set; }
     }
 }

@@ -12,6 +12,7 @@
     <ProjectReference Include="..\Ticket.Application\Ticket.Application.csproj" />
     <ProjectReference Include="..\Ticket.Data\Ticket.Data.csproj" />
     <ProjectReference Include="..\Ticket.Domain\Ticket.Domain.csproj" />
+    <ProjectReference Include="..\Ticket.Integrations\Ticket.Integrations.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
+using Ticket.Domain.Exceptions;
 using Ticket.Domain.Interfaces.Repository;
 
 namespace Ticket.Data.Repository
@@ -7,6 +9,7 @@ namespace Ticket.Data.Repository
     public abstract class RepositoryBase<T> : IDisposable, IRepositoryBase<T> where T : class
     {
         private readonly SqlContext _context;
+        
 
         public RepositoryBase(SqlContext context)
         {
@@ -19,12 +22,11 @@ namespace Ticket.Data.Repository
             {
                 _context.Set<T>().Add(entity);
                 _context.SaveChanges();
-
             }
             catch (Exception ex)
             {
 
-                throw ex;
+                throw new AppException(ex.Message);
             }
             
         }
@@ -34,12 +36,13 @@ namespace Ticket.Data.Repository
             try
             {
                 _context.Set<T>().Remove(entity);
+                _context.Entry(entity).State = EntityState.Deleted;
                 _context.SaveChanges();
             }
             catch (Exception ex)
             {
 
-                throw ex;
+                throw new AppException(ex.Message);
             }
         }
 
@@ -65,7 +68,7 @@ namespace Ticket.Data.Repository
             catch (Exception ex)
             {
 
-                throw ex;
+                throw new AppException(ex.Message);
             }
         }
     }

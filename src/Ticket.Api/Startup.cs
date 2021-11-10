@@ -27,6 +27,7 @@ namespace Ticket.Api
         {
             var connection = Configuration["SqlConnection:SqlConnectionString"];
             services.AddDbContext<SqlContext>(options => options.UseSqlServer(connection));
+
             services.AddControllers();
 
             var mapperConfig = new MapperConfiguration(mc =>

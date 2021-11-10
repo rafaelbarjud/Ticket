@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Text;
 
 namespace Ticket.Application.Request
 {
-    public class RequestUser
+    public class RequestUpdateUser
     {
-        public RequestUser()
+        public RequestUpdateUser()
         {
             Address = new List<RequestAddress>();
         }
 
-        public string Name {  get; set; }
+        public Guid Id { get; set; }
+        public string Name { get; set; }
         public string Email { get; set; }
         public DateTime? BirthDate { get; set; }
         public string Phone { get; set; }
