@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using Ticket.Application.Interfaces;
 using Ticket.Application.Request;
 using Ticket.Application.Response;
+using Ticket.Domain.Exceptions;
 using Ticket.Domain.Interfaces.Services;
 using Ticket.Domain.Models;
 
@@ -24,6 +26,9 @@ namespace Ticket.Application.Services
         public void Add(RequestUser user)
         {
             User newUser = _mapper.Map<User>(user);
+            
+            newUser.Validate(newUser);
+            
             _serviceUser.Add(newUser);
         }
 

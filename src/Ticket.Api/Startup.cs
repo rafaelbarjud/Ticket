@@ -5,8 +5,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using AutoMapper;
 using Ticket.Data;
 using Ticket.IoC;
+using Ticket.Application.Mappings;
+using Ticket.Domain.Exceptions;
 
 namespace Ticket.Api
 {
@@ -25,6 +28,15 @@ namespace Ticket.Api
             var connection = Configuration["SqlConnection:SqlConnectionString"];
             services.AddDbContext<SqlContext>(options => options.UseSqlServer(connection));
             services.AddControllers();
+
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+
+            IMapper mapper = mapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
 
             services.AddSwaggerGen(options =>
             {
@@ -49,7 +61,7 @@ namespace Ticket.Api
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseErrorHandlerMiddleware();
             app.UseRouting();
 
             app.UseAuthorization();
@@ -62,6 +74,9 @@ namespace Ticket.Api
             app.UseSwagger();
             app.UseSwagger();
             app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v2/swagger.json", "PlaceInfo Services"));
+
+            app.UseHttpsRedirection();
+            
         }
-    }
+    }   
 }
