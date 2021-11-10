@@ -23,12 +23,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticket.Api", "src\Ticket.Ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticket.IoC", "src\Ticket.IoC\Ticket.IoC.csproj", "{3946EEC8-A630-46FD-A192-8BC9D38927E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticket.Integrations", "src\Ticket.Integrations\Ticket.Integrations.csproj", "{F4F17E20-750B-4DBC-9090-CED91A9C8229}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticket.Integrations", "src\Ticket.Integrations\Ticket.Integrations.csproj", "{F4F17E20-750B-4DBC-9090-CED91A9C8229}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScriptSqlServer", "ScriptSqlServer", "{CA5BE691-597D-40EB-8327-344C843AB985}"
 	ProjectSection(SolutionItems) = preProject
 		DDL.sql = DDL.sql
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticket.UnitTest", "src\Ticket.UnitTest\Ticket.UnitTest.csproj", "{BCBD9E40-EDBB-4ED7-9FC4-0A7834B689D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,6 +62,10 @@ Global
 		{F4F17E20-750B-4DBC-9090-CED91A9C8229}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4F17E20-750B-4DBC-9090-CED91A9C8229}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4F17E20-750B-4DBC-9090-CED91A9C8229}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCBD9E40-EDBB-4ED7-9FC4-0A7834B689D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCBD9E40-EDBB-4ED7-9FC4-0A7834B689D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCBD9E40-EDBB-4ED7-9FC4-0A7834B689D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCBD9E40-EDBB-4ED7-9FC4-0A7834B689D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +77,7 @@ Global
 		{17728DCD-EC11-4FD8-BC54-142E64605FB7} = {650F5472-9924-4A4F-8746-522488B4378B}
 		{3946EEC8-A630-46FD-A192-8BC9D38927E8} = {E42CA292-8C21-4CED-B399-99F3A94D6709}
 		{F4F17E20-750B-4DBC-9090-CED91A9C8229} = {E42CA292-8C21-4CED-B399-99F3A94D6709}
+		{BCBD9E40-EDBB-4ED7-9FC4-0A7834B689D7} = {D6B02BF9-443B-4FC3-8DDE-2274B25BCC38}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9F4AF04-2D97-4003-ABBD-3D83203177C2}
